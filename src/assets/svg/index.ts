@@ -1,0 +1,6 @@
+export { default as BinanceLogo } from './binance-svgrepo-com'
+export { default as BitgetLogo } from './Bitget'
+export {default as OKXLogo} from './okx-1'
+export {default as BybitLogo} from './bybit-3'
+export {default as KucoinLogo} from './kucoin-svgrepo-com'
+export {default as HTXLogo} from './htx'

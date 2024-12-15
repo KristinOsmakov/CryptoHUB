@@ -1,0 +1,44 @@
+.cryptoExchange {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 350px;
+    height: 250px;
+
+}
+.exchangeHeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.exchangeHeader {
+    font-size: 25px;
+    font-weight: bold;
+}
+.Binance {
+    background-color: #181A20;
+    color: #F0B90B;
+}
+.Bybit {
+    background-color: #25282c;
+    color: #f7a600;
+}
+.Kucoin {
+    color: #24ae8f;
+    background-color: rgb(29, 29, 29);
+}
+.HTX {
+    color: #3498db;
+    background-color: #fafafa;;
+}
+.OKX {
+    color: #fff;
+    background-color: #3498db;;
+}
+.Bitget {
+    color: #03aac7;
+    background-color: #1f2023;;
+}
+
