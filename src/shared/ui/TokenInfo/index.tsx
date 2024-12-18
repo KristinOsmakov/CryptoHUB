@@ -2,8 +2,9 @@ import styles from './styles.module.scss'
 import { TokenInfoProps } from '../../../entities/ExchangeArray/index'
 import { useDispatch, useSelector } from 'react-redux'
 import { addSum } from '../../../features/sumSlice'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import SocketApiBybit from '../../../features/SocketApi/socket-api-bybit'
+import { PublicPageModal } from '../publicPageModal/PublicPageModal'
 
 
 
@@ -19,15 +20,26 @@ export const TokenInfo = ({ tokenName, priceNow, pricePurchase, quantity, exchan
     useEffect(() => {
         dispatch(addSum({ exchange: exchangeName, value: sumUSD }));
     }, [dispatch, sumUSD, exchangeName]);
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const openModal = () => setIsModalOpen(true)
+    const closeModal = () => setIsModalOpen(false)
 
     return (
-        <div className={styles.tokenInfo}>
+        <>
+            <button onClick={openModal} className={styles.tokenInfo}>
             <div>{tokenName}</div>
             <div><SocketApiBybit tokenName={tokenName}/></div>
-            <div>{pricePurchaseNum}</div>
-            <div>{profit}</div>
+            {/* <div>{price}</div> */}
             <div>{quantityNum}</div>
             <div>{sumUSD}</div>
-        </div>
+        </button>
+        <PublicPageModal 
+        pricePurchaseNum={pricePurchaseNum}
+        sumUSD={sumUSD} 
+        tokenName={tokenName} 
+        quantityNum={quantityNum} 
+        isOpen={isModalOpen} 
+        onClose={closeModal} />
+        </>
     )
 }

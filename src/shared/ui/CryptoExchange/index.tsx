@@ -3,7 +3,7 @@ import { ExchangeArray } from '../../../entities/ExchangeArray/index';
 import { exchangeImage } from '../../../entities/ExchangeImage';
 import styles from './styles.module.scss';
 import clsx from 'clsx';
-import { Scroll } from "../scroll";
+import { Scroll } from "../Scroll";
 import { useSelector } from 'react-redux';
 
 export const CryptoExchange = ({ exchangeName }: { exchangeName: string }) => {
@@ -13,7 +13,6 @@ export const CryptoExchange = ({ exchangeName }: { exchangeName: string }) => {
     
     const sum = sums[exchangeName] ? sums[exchangeName].reduce((acc: number, val: number) => acc + val, 0) : 0;
     const freeUSDT = (tokens.find(token => token.tokenName === 'USDT')?.quantity || 0)
-    //console.log('@@@@@@@',freeUSDT);
     
 
     if (!tokens) {
@@ -22,7 +21,7 @@ export const CryptoExchange = ({ exchangeName }: { exchangeName: string }) => {
 
     const LogoComponent = exchangeImage[exchangeName];
     const exchangeStyle = styles[exchangeName];
-
+    console.log(tokens)
     return (
         <div className={clsx(styles.cryptoExchange, exchangeStyle)}>
             <div className={styles.exchangeHeaderContainer}>

@@ -1,0 +1,117 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+.publicPageModule {
+    position: relative;
+    height: 500px;
+    width: 974px;
+    padding: 50px;
+    font-size: 50px;
+    font-weight: 800;
+    background-color: #181A20;
+    border: 5px solid red;
+    border-radius: 2px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 1001;    
+}
+
+.close {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border: none;
+  position: absolute;
+  top: -25px;
+  right: -25px;
+}
+
+.Binance {
+  background-color: #181A20;
+  color: #F0B90B;
+}
+.Bybit {
+  background-color: #25282c;
+  color: #f7a600;
+}
+.Kucoin {
+  color: #24ae8f;
+  background-color: rgb(29, 29, 29);
+}
+.HTX {
+  color: #3498db;
+  background-color: #fafafa;;
+}
+.OKX {
+  color: #fff;
+  background-color: #3498db;;
+}
+.Bitget {
+  color: #03aac7;
+  background-color: #1f2023;;
+}
+
+
+
+
+
+.prevButton,
+.nextButton {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-light-100);
+  background-color: var(--color-light-900);
+  border: none;
+  cursor: pointer;
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+
+.active {
+  background-color: var(--color-accent-500);
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.exchangeImg {
+  margin: 0 auto;
+}
+
+.tokenInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tokenName {
+  font-size: 120px;
+  font-weight: 1000;
+}
