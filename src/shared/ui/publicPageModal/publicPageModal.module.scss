@@ -19,8 +19,8 @@
     font-size: 50px;
     font-weight: 800;
     background-color: #181A20;
-    border: 5px solid red;
-    border-radius: 2px;
+    border: 2px solid #181A20;
+    border-radius: 20px;
     margin: 0 auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     z-index: 1001;    
@@ -34,6 +34,14 @@
   position: absolute;
   top: -25px;
   right: -25px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
 }
 
 .Binance {
@@ -99,7 +107,11 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+  & > * {
+    width: 324px;
+  }
 }
 .exchangeImg {
   margin: 0 auto;
@@ -109,6 +121,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  & > * {
+    width: 324px;
+  }
 }
 
 .tokenName {

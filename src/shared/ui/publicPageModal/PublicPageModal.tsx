@@ -3,17 +3,21 @@ import s from './publicPageModal.module.scss'
 import ArrowLeft from '../../../assets/svg/ArrowLeft'
 import ArrowRight from '../../../assets/svg/ArrowRight'
 import { useSelector } from 'react-redux'
+import ArrowDown from '../../../assets/svg/ArrowDown'
+import ArrowUp from '../../../assets/svg/ArrowUp'
 export type PublicPageModalProps = {
+  profit: number
+  profitPercent: number
   tokenName: string
   sumUSD: number
   quantityNum: number
-  pricePurchaseNum: number
+  priceBuyNum: number
   children?: React.ReactNode
   isOpen: boolean
   onClose: () => void
 }
 
-export const PublicPageModal = ({ tokenName, sumUSD, quantityNum, pricePurchaseNum, children,  isOpen = true, onClose }: PublicPageModalProps) => {
+export const PublicPageModal = ({ profit, profitPercent, tokenName, sumUSD, quantityNum, priceBuyNum, children,  isOpen = true, onClose }: PublicPageModalProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const prices = useSelector((state: any) => state.price.prices);
   if (!isOpen) {
@@ -47,9 +51,14 @@ export const PublicPageModal = ({ tokenName, sumUSD, quantityNum, pricePurchaseN
         </button>
         <div className={s.header}>
           <div>{sumUSD}</div>
+          <div className={profitPercent > 0 ? s.green : s.red}>
+            {profitPercent > 0 ? <ArrowUp /> : <ArrowDown />} 
+            {profitPercent} %
+          </div>
+          <div>{profit}</div>
         </div>
         <div className={s.tokenInfo}>
-          <div>{pricePurchaseNum}</div>
+          <div>{priceBuyNum}</div>
           <div className={s.tokenName}>{tokenName}</div>
           <div>{prices[tokenName]}</div>
         </div>

@@ -11,9 +11,8 @@ export const CryptoExchange = ({ exchangeName }: { exchangeName: string }) => {
     const sums = useSelector((state: any) => state.sum.sums);
     
     
-    const sum = sums[exchangeName] ? sums[exchangeName].reduce((acc: number, val: number) => acc + val, 0) : 0;
-    const freeUSDT = (tokens.find(token => token.tokenName === 'USDT')?.quantity || 0)
-    
+    const sum = (sums[exchangeName] ? sums[exchangeName].reduce((acc: number, val: number) => acc + val, 0) : 0).toFixed(2);
+    const freeUSDT = parseFloat((tokens.find(token => token.tokenName === 'USDT')?.quantity || '0')).toFixed(2);
 
     if (!tokens) {
         return <div>Exchange not found</div>;
@@ -38,7 +37,7 @@ export const CryptoExchange = ({ exchangeName }: { exchangeName: string }) => {
                         <TokenInfo
                             tokenName={token.tokenName}
                             priceNow={token.priceNow}
-                            pricePurchase={token.pricePurchase}
+                            priceBuy={token.priceBuy}
                             quantity={token.quantity}
                             exchangeName={exchangeName}
                         />
