@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://KristinOsmakov.github.io/CryptoHUB",
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.2.1",
     "@reduxjs/toolkit": "^2.3.0",
